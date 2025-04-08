@@ -1,0 +1,54 @@
+<div class="landingPage">
+  <mat-card class="title">
+    <!-- <mat-card-content>SPLI<br/>TTER</mat-card-content> -->
+    <img src="/logo.svg" alt="dollar icon" />
+  </mat-card>
+  <mat-card class="card">
+    <mat-card-content class="card-content">
+      <mat-card class="first">
+        <mat-card-content>
+          <p class="firstText">Bill</p>
+          <div class="bill">
+            <img src="/icon-dollar.svg" class="images" alt="dollar icon" />
+            <!-- <p class="secondText">0</p> -->
+            <input type="number" class="secondText" [(ngModel)]="bill" />
+          </div>
+          <div>
+            <p class="firstText">Select Tip %</p>
+            <Button class="button" *ngFor="let tip of [5, 10, 15, 25, 50]" (click)="tipPercentage = tip" 
+            [ngClass]="{ 'active-btn': tipPercentage === tip }">{{ tip }}%</Button>
+            <input type="number" class="button2" placeholder="Custom" [(ngModel)]="customTip" />
+          </div>
+          <div>
+            <p class="firstText">Number of People</p>
+            <div class="bill">
+              <img src="/icon-person.svg" class="images" alt="dollar icon" />
+              <input type="number" class="secondText" min="1" [(ngModel)]="people" />
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+      <mat-card class="second">
+        <mat-card-content>
+          <div class="amount">
+            <div>
+              <p class="one">Tip Amount</p>
+              <p class="two">/person</p>
+            </div>
+            <p class="three">${{ tipAmount.toFixed(2)}}</p>
+          </div>
+          <div class="total">
+            <div>
+              <p class="one">Total</p>
+              <p class="two">/person</p>
+            </div>
+            <p class="three">${{ total.toFixed(2) }}</p>
+          </div>
+          <Button class="reset" (click)="reset()">RESET</Button>
+        </mat-card-content>
+      </mat-card>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<router-outlet />
