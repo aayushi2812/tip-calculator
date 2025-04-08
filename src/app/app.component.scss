@@ -160,7 +160,27 @@ button:hover {
 
 @media screen and (max-width: 375px) {
     .card{
-      width: 200px;
+      width: 300px;
       height: 2000px !important;   
+    }
+    .first{
+        height: 350px;
+        width: 250px;
+        align-content: baseline;
+        padding-bottom: 120px;
+    }
+    .second{
+        height: 400px;
+        width: 250px;
+        align-content: baseline;
+    }
+    .reset{
+        width: 235px;
+    }
+    .landingPage{
+        height: 200%;
+    }
+    .title{
+        padding-top: 40px;
     }
 }
